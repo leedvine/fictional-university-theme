@@ -13,33 +13,34 @@
 <div class="container container--narrow page-section">
     <?php
     while (have_posts()) {
-        the_post(); ?>
-        <div class="post-item">
-            <h2 class="headline headline--medium headline--post-title"><a href="<?php the_permalink(); ?>">
-                    <?php the_title(); ?>
-                </a>
-            </h2>
-            <div class="metabox">
-                <p>Posted by
-                    <?php the_author_posts_link(); ?>
-                    <br>On the
-                    <?php the_time('jS F Y') ?><br>In
-                    <?php echo get_the_category_list(', '); ?>
-                </p>
-            </div>
+        the_post();
+    } ?>
+    <div class="post-item">
+        <h2 class="headline headline--medium headline--post-title"><a href="<?php the_permalink(); ?>">
+                <?php the_title(); ?>
+            </a>
+        </h2>
+        <div class="metabox">
+            <p>Posted by
+                <?php the_author_posts_link(); ?>
+                <br>On the
+                <?php the_time('jS F Y') ?><br>In
+                <?php echo get_the_category_list(', '); ?>
+            </p>
+        </div>
 
-            <div class="generic-content">
-                <?php the_excerpt(); ?>
-                <p><a><a class="btn btn--blue" href="<?php the_permalink(); ?>">Continue Reading!</a></p>
-
-            </div>
-
+        <div class="generic-content">
+            <?php the_excerpt(); ?>
+            <p><a><a class="btn btn--blue" href="<?php the_permalink(); ?>">Continue Reading!</a></p>
 
         </div>
-        <div id="blog-nav">
-        <?php }
-    echo posts_nav_link(' ', __('&laquo; Newer Posts'), __('Older Posts &raquo;'));
-    ?>
+
+
+    </div>
+    <div id="blog-nav">
+        <?php
+        echo posts_nav_link(' ', __('&laquo; Newer Posts'), __('Older Posts &raquo;'));
+        ?>
     </div>
 
 </div>
